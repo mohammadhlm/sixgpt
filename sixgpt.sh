@@ -40,11 +40,6 @@ prompt_user_input() {
     read -p "Enter Vana Network (satori or moksha): " VANA_NETWORK
 }
 
-clear_ram_cache() {
-    show "Clearing RAM cache..." "progress"
-    sudo sh -c "sync; echo 3 > /proc/sys/vm/drop_caches"
-    show "RAM cache cleared."
-}
 
 run_docker_containers() {
     sudo docker volume create ollama && \
